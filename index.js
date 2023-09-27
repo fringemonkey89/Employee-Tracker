@@ -1,4 +1,4 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 
 const mainMenu = [
     {
@@ -41,5 +41,55 @@ const deptDet = [
     }
 ]
 
+const roleDet = [
+    {
+        type : "input",
+        name: "salary",
+        message: "What is the salary for this position?",
+        validate: res => {
+            if (!res || res % 1 != 0) {
+                console.log("a valid number is required");
+                return false;
+            } else {
+                return true;
+            }
+        }
+        
+    },
+    {
+     type: "list",
+     name: "dept",
+     message: "which department does this role belong to?",  
+     //choices: 
+    },
+    {
+        type:"confirm",
+        name: "management",
+        message: "is it a managerial position?",
+        default: false
+    }
+]
 
+// adding an employee
 
+const emplDet = [
+    {
+        type: "input",
+        name: 'firstName',
+        message: "please enter employees first name",
+        validate: res => {
+            if (!res || res.length > 30) {
+                console.log("the length of th first name must be between 1 to 30 ")
+                return false
+            }
+            return true;
+        }
+       
+    },
+    {
+
+    },
+    {
+
+    },
+]
